@@ -23,6 +23,18 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("~/pages/products").then((m) => m.ProductDetail),
     props: true,
   },
+  {
+    path: "/categories",
+    name: "categories",
+    component: () => import("~/pages/categories"),
+  },
+  {
+    path: "/categories/:slug",
+    name: "category-detail",
+    component: () =>
+      import("~/pages/categories").then((m) => m.CategoryDetailPage),
+    props: true,
+  },
 ];
 
 const router = createRouter({
